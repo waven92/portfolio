@@ -1,0 +1,172 @@
+$color-bg-main: rgba(233, 241, 223, .8);
+$color-bg-main-t: transparentize($color-bg-main, 1);
+
+$size: 2.8em;
+$size-half: $size/2;
+$begin: $size/9.53;
+$step: $size/18;
+$space: $size/8.4;
+$step-s: $step/1.5;
+
+$step-b: $space;
+$step-e: $space + $step;
+$step-b-2: $space*2 + $step;
+$step-e-2: $space*2 + $step*2;
+$step-b-3: $space*3 + $step*2;
+$step-e-3: $space*3 + $step*3;
+
+$small-b: ($space*3 + $step)/2;
+$small-e: $small-b + $step;
+$small-b-2: $small-b + $step + $space;
+$small-e-2: $small-b + $step*2 + $space;
+
+$small-c: $size + $space - $step/1.9;
+
+body {
+  margin: 0;
+  text-align: center;
+  background: 
+  radial-gradient(circle at right,
+    $color-bg-main-t $step-b,
+    $color-bg-main $step-b, $color-bg-main $step-e,
+    $color-bg-main-t $step-e, $color-bg-main-t $step-b-2,
+    $color-bg-main $step-b-2, $color-bg-main $step-e-2,
+    $color-bg-main-t $step-e-2, $color-bg-main-t $step-b-3,
+    $color-bg-main $step-b-3, $color-bg-main $step-e-3,
+    $color-bg-main-t $step-e-3
+  ) 0 0,
+  radial-gradient(circle at left,
+    $color-bg-main-t $small-b,
+    $color-bg-main $small-b, $color-bg-main $small-e,
+    $color-bg-main-t $small-e, $color-bg-main-t $small-b-2,
+    $color-bg-main $small-b-2, $color-bg-main $small-e-2,
+    $color-bg-main-t $small-e-2
+  ) 0 $small-c,
+
+  linear-gradient(to right top,
+    $color-bg-main $step,
+    $color-bg-main-t $step
+  ) $small-e-2 $step,
+  linear-gradient(to left top,
+    $color-bg-main $step,
+    $color-bg-main-t $step
+  ) $small-e-2 $step,
+  linear-gradient(to right bottom,
+    $color-bg-main $step,
+    $color-bg-main-t $step
+  ) $small-e-2 $step,
+  linear-gradient(to left bottom,
+    $color-bg-main $step,
+    $color-bg-main-t $step
+  ) $small-e-2 $step
+  ;
+  background-size: $size $size;
+  background-color: rgba(173, 216, 230, .5);
+  background-attachment: fixed;
+}
+
+header {
+  background-color: #fff;
+  width: 100%;
+  height: 64px;
+}
+.navbar_wrapper {
+  background-color: rgba(255,255,255,0.7);
+  width: 100%;
+  height: 64px;
+  position: fixed;
+}
+nav {
+  width: 80%;
+  margin: auto;
+  img {
+    position: absolute;
+    left: 10%;
+  }
+}
+.menue {
+  display: flex;
+  margin: auto;
+  padding: 0;
+  justify-content: flex-end;
+  li {
+    list-style: none;
+    display: inline-block;
+    width: 12%;
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 20px 0;
+      position: relative;
+      color: #000;
+      &::after {
+        position: absolute;
+        content: '';
+        bottom: 19px;
+        left: calc(50% - 33px);
+        height: 2px;
+        width: 0;
+        background: #000;
+        transition: all 0.3s;
+      }
+      &:hover {
+        &::after {
+          width: 66px;
+        }
+      }
+    }
+  }
+}
+h1 {
+  font-size: 50px;
+  font-weight: 100;
+  margin: 0;
+  padding: 28vh 0;
+  display: block;
+}
+h2 {
+  font-size: 18px;
+  &::first-line {
+    font-size: 35px;
+  }
+}
+#top {
+  height: calc(100vh - 66px);
+}
+.arrow_down {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin: auto;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 33px;
+    height: 33px;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 17px;
+    top: 9px;
+  }
+}
+#about {
+  height: 100vh;
+
+}
+#skills {
+  height: 100vh;
+  background-color: #fff;
+}
+#works {
+  height: 100vh;
+
+}
+#contact {
+  height: 100vh;
+  background-color: #fff;
+}
