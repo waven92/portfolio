@@ -77,11 +77,11 @@ header {
   position: fixed;
 }
 nav {
-  width: 80%;
+  width: 1000px;
   margin: auto;
   img {
     position: absolute;
-    left: 10%;
+    left: calc((100% - 1000px) / 2);
   }
 }
 .menue {
@@ -159,8 +159,23 @@ h2 {
 
 }
 #skills {
-  height: 100vh;
   background-color: #fff;
+}
+.skill_list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  padding: 0;
+  margin: auto;
+  li {
+    list-style: none;
+    width: calc(100% /3);
+  }
+}
+.skill_detail {
+  width: 82%;
+  margin: auto;
+  font-size: 14px;
 }
 #works {
   height: 100vh;
