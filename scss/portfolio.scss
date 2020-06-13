@@ -70,7 +70,7 @@ header {
   width: 100%;
   height: 64px;
 }
-.navbar_wrapper {
+.navbar_fixed {
   background-color: rgba(255,255,255,0.7);
   width: 100%;
   height: 64px;
@@ -93,6 +93,9 @@ nav {
     list-style: none;
     display: inline-block;
     width: 12%;
+    &:first-of-type {
+      display: none;
+    }
     a {
       text-decoration: none;
       display: block;
@@ -116,6 +119,15 @@ nav {
       }
     }
   }
+}
+#menueBtn {
+  position: absolute;
+  right: -50vw;
+}
+.open,
+.close,
+.close_bg {
+  display: none;
 }
 h1 {
   font-size: 50px;
@@ -184,4 +196,43 @@ h2 {
 #contact {
   height: 100vh;
   background-color: #fff;
+}
+
+@media screen and (max-width:450px) {
+  nav {
+    width: 100vw;
+    img {
+      top: 2px;
+      left: 5vw;
+    }
+  }
+  .menue {
+    flex-direction: column;
+    width: 50vw;
+    position: absolute;
+    top: 0;
+    right: -207px;
+    background-color: #fff;
+    li {
+      width: 100%;
+      &:first-of-type {
+        display: block;
+      }
+      a {
+        text-align: left;
+        padding-left: 40px;
+      }
+    }
+  }
+  .open,
+  .close,
+  .close_bg {
+    display: block;
+  }
+  .skill_list {
+    width: 100vw;
+    li {
+      width: 50vw;
+    }
+  }
 }
