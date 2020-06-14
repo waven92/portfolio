@@ -213,6 +213,7 @@ h2 {
     top: 0;
     right: -207px;
     background-color: #fff;
+    transition: all .2s;
     li {
       width: 100%;
       &:first-of-type {
@@ -221,13 +222,34 @@ h2 {
       a {
         text-align: left;
         padding-left: 40px;
+        &::after {
+          display: none;
+        }
       }
     }
   }
-  .open,
-  .close,
-  .close_bg {
+  .open {
     display: block;
+  }
+  input[id="menueBtn"]:checked {
+    &~ .menue {
+      right: 0;
+    }
+    &~.open {
+      display: none;
+    }
+    &~.close {
+      display: block;
+    }
+    &~.close_bg {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.7);
+    }
   }
   .skill_list {
     width: 100vw;
