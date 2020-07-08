@@ -65,6 +65,7 @@ body {
   background-attachment: fixed;
 }
 
+// ヘッダーメニュー
 header {
   background-color: #fff;
   width: 100%;
@@ -120,6 +121,8 @@ nav {
     }
   }
 }
+
+// ドロワーメニュー
 #menueBtn {
   position: absolute;
   right: -50vw;
@@ -129,6 +132,8 @@ nav {
 .close_bg {
   display: none;
 }
+
+
 h1 {
   font-size: 50px;
   font-weight: 100;
@@ -137,10 +142,15 @@ h1 {
   display: block;
 }
 h2 {
-  font-size: 18px;
+  font-size: 35px;
+  margin: 0;
+  padding-top: 64px;
   &::first-line {
-    font-size: 35px;
+    font-size: 18px;
   }
+}
+p {
+  line-height: 2;
 }
 #top {
   height: calc(100vh - 66px);
@@ -166,9 +176,19 @@ h2 {
     top: 9px;
   }
 }
+.section_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 1000px;
+  h2 {
+    padding-top: 0;
+  }
+}
 #about {
   height: 100vh;
-
 }
 #skills {
   background-color: #fff;
@@ -177,7 +197,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   width: 1000px;
-  padding: 0;
+  padding: 22px 0 60px;
   margin: auto;
   li {
     list-style: none;
@@ -186,8 +206,8 @@ h2 {
 }
 .skill_detail {
   width: 82%;
-  margin: auto;
-  font-size: 14px;
+  margin: 0 auto 40px;
+  font-size: 15px;
 }
 #works {
   height: 100vh;
